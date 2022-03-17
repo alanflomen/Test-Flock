@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+
+<!DOCTYPE html>
+<script>
+    if ('@ViewBag.Message' != '') {
+        alert('@ViewBag.Message');
+    }
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+</head>
+<h2>Ingresar datos:</h2>
+
+
+<body>
+
+
+    @using (Html.BeginForm("Loguearse", "Home"))
+    { 
+    <table class="auto-style1">
+        <tr>
+            <td>Usuario:</td>
+            <td>
+                <input type="text" name="txtUsuario" value="admin" required/>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Contraseña:</td>
+            <td> 
+                <input type="password" name="txtPass" value="123" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Login"/>
+            </td>
+        </tr>
+    </table>
+    }
+    </body>
+</html>  

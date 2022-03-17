@@ -1,0 +1,76 @@
+﻿
+
+<div class="jumbotron">
+    <h1>Bienvenido @ViewBag.Usuario!</h1>
+    <table class="auto-style1">
+        <tr>
+            <td>Mail: </td>
+            <td>
+                admin@test.com.ar
+            </td>
+
+        </tr>
+        <tr>
+            <td>Edad: </td>
+            <td>
+                30 años
+            </td>
+        </tr> 
+        <tr>
+            <td>Sexo: </td>
+            <td>
+                M
+            </td>
+        </tr>
+        <tr>
+            <td>Dirección: </td>
+            <td>
+                Calle Falsa 123
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <h2>Seleccione una provincia</h2>
+    <br />
+    @using (Html.BeginForm("Provincias", "Home"))
+    {
+        @Html.DropDownList("provincia", new List<SelectListItem>
+  { new SelectListItem{Text="Buenos Aires", Value="Buenos Aires",Selected =true },
+        new SelectListItem{Text="Ciudad Autónoma de Buenos Aires", Value="Ciudad Autónoma de Buenos Aires"},
+new SelectListItem{Text="Catamarca", Value="Catamarca"},
+new SelectListItem{Text="Chaco", Value="Chaco"},
+new SelectListItem{Text="Chubut", Value="Chubut"},
+new SelectListItem{Text="Córdoba", Value="Córdoba"},
+new SelectListItem{Text="Corrientes", Value="Corrientes"},
+new SelectListItem{Text="Entre Ríos", Value="Entre Ríos"},
+new SelectListItem{Text="Formosa", Value="Formosa"},
+new SelectListItem{Text="Jujuy", Value="Jujuy"},
+new SelectListItem{Text="La Pampa", Value="La Pampa"},
+new SelectListItem{Text="La Rioja", Value="La Rioja"},
+new SelectListItem{Text="Mendoza", Value="Mendoza"},
+new SelectListItem{Text="Misiones", Value="Misiones"},
+new SelectListItem{Text="Neuquén", Value="Neuquén"},
+new SelectListItem{Text="Río Negro", Value="Río Negro"},
+new SelectListItem{Text="Salta", Value="Salta"},
+new SelectListItem{Text="San Juan", Value="San Juan"},
+new SelectListItem{Text="San Luis", Value="San Luis"},
+new SelectListItem{Text="Santa Cruz", Value="Santa Cruz"},
+new SelectListItem{Text="Santa Fe", Value="Santa Fe"},
+new SelectListItem{Text="Santiago del Estero", Value="Santiago del Estero"},
+new SelectListItem{Text="Tierra del Fuego, Antártida e Islas del Atlántico Sur", Value="Tierra del Fuego, Antártida e Islas del Atlántico Sur"},
+new SelectListItem{Text="Tucumán", Value="Tucumán"}
+    }, htmlAttributes: new { @class = "form-control", id = "provincia" })
+        <br />
+        <input type="submit" value="Buscar" />
+    }
+</div>
+<br />
+<div>
+    Provincia: @ViewBag.Provincia
+    <br />
+    Latitud: @ViewBag.Lat
+    <br />
+    Longitud: @ViewBag.Lon
+</div>
